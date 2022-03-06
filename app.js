@@ -3,9 +3,22 @@ const app = Vue.createApp({
     data() {
         return {
             hideBooks: true,
-            title: "The final empire",
-            author: "Jhon Smell",
-            age: 43
+
+            books:
+                [
+                    {
+                        title: "The final empire",
+                        author: "Jhon Sword",
+                    },
+                    {
+                        title: "The middle age of empire",
+                        author: "Jhon Smell",
+                    },
+                    {
+                        title: "The start of empire",
+                        author: "Elton Smell",
+                    },
+                ],
         }
     },
     methods: {
