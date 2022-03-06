@@ -56,9 +56,9 @@
                     <td class="is-vcentered is-capitalized	">{{ book.author }}</td>
 
                     <td class="is-vcentered">
-                        <i v-if="book.isFav" @dblclick="toggleFav(book)" class="fas fa-star fa-2x"
+                        <i v-if="book.isFav" @click="toggleFav(book)" class="fas fa-star fa-2x"
                             style="color:yellow"></i>
-                        <i v-else @dblclick="toggleFav(book)" class="fas fa-star fa-2x" style="color:white"></i>
+                        <i v-else @click="toggleFav(book)" class="fas fa-star fa-2x" style="color:white"></i>
 
                     </td>
                 </tr>
