@@ -18,7 +18,7 @@
 
         tr.fav {
             background-color: lightslategray;
-            color: rgb(59, 59, 59);
+            color: rgb(255, 255, 255);
         }
     </style>
     <script src="https://unpkg.com/vue@3.0.2"></script>
@@ -35,16 +35,19 @@
 
         <div v-if="hideBooks" class="columns is-mobile is-centered ">
             <table class="table has-text-centered has-background-grey-light ">
+
                 <tr>
                     <th>Image</th>
                     <th>Book</th>
                     <th>Author</th>
                     <th>Favorite</th>
                 </tr>
+
                 <tr v-for="book in books" :class="{ fav: book.isFav }" class="">
                     <td><a :href="book.url"><img :src="book.img" :alt="book.title"></a></td>
-                    <td class="is-vcentered">{{ book.title }}</td>
-                    <td class="is-vcentered">{{ book.author }}</td>
+                    <td class="is-vcentered is-capitalized	">{{ book.title }}</td>
+                    <td class="is-vcentered is-capitalized	">{{ book.author }}</td>
+
                     <td class="is-vcentered">
                         <i v-if="book.isFav" @click="toggleFav(book)" class="fas fa-star fa-2x"
                             style="color:yellow"></i>
