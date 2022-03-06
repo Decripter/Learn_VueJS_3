@@ -64,7 +64,27 @@
                 </tr>
             </table>
         </div>
-        <br>
+        <hr>
+        <div v-if="filtredBooks" class="columns is-mobile is-centered ">
+            <table class="table has-text-centered has-background-grey-light ">
+
+                <tr>
+                    <th>Image</th>
+                    <th>Book</th>
+                    <th>Author</th>
+
+                </tr>
+
+                <tr v-for="book in filtredBooks" :class="{ fav: book.isFav }" class="">
+                    <td><a :href="book.url"><img :src="book.img" :alt="book.title"></a></td>
+                    <td class="is-vcentered is-capitalized	">{{ book.title }}</td>
+                    <td class="is-vcentered is-capitalized	">{{ book.author }}</td>
+
+
+                    </td>
+                </tr>
+            </table>
+        </div>
 
 
     </div>
