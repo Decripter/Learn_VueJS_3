@@ -6,7 +6,13 @@ const app = Vue.createApp({
             author: "Jhon Smell",
             age: 43
         }
+    },
+    methods: {
+        changeTitle(titleArg) {
+            this.title = titleArg
+        }
     }
+
 })
 
 app.mount('#app')
