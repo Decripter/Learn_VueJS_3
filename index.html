@@ -27,7 +27,14 @@
 <body>
     <div id="app">
 
-        <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+        <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+
+            <a class="navbar-item is-dark" @click="toggleHideBooks">
+
+                <span v-if="hideBooks">Hide Books</span>
+                <span v-else>Show Books</span>
+            </a>
+
 
         </nav>
 
@@ -58,13 +65,7 @@
             </table>
         </div>
         <br>
-        <div class="columns is-mobile is-centered ">
 
-            <button class="button" @click="toggleHideBooks($event)">
-                <span v-if="hideBooks">Hide Books</span>
-                <span v-else>Show Books</span>
-            </button>
-        </div>
 
     </div>
 
