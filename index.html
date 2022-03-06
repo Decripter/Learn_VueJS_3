@@ -5,11 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn Vue</title>
+    <link rel="stylesheet" href="css/bulma.min.css">
     <style>
         table,
         th,
         td {
             border: 1px solid black;
+        }
+
+        tr.fav {
+            background-color: rgb(255, 241, 117);
+            color: rgb(59, 59, 59);
         }
     </style>
     <script src="https://unpkg.com/vue@3.0.2"></script>
@@ -27,13 +33,13 @@
         <br>
 
         <div v-if="hideBooks">
-            <table>
+            <table class="table is-hoverable has-text-centered has-background-light ">
                 <tr>
                     <th>Image</th>
                     <th>Book</th>
                     <th>Author</th>
                 </tr>
-                <tr v-for="book in books">
+                <tr v-for="book in books" :class="{ fav: book.isFav }">
                     <td><a :href="book.url"><img :src="book.img" :alt="book.title"></a></td>
                     <td>{{ book.title }}</td>
                     <td>{{ book.author }}</td>
