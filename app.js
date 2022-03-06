@@ -12,7 +12,8 @@ const app = Vue.createApp({
         changeTitle(titleArg) {
             this.title = titleArg
         },
-        toogleHideBooks() {
+        toogleHideBooks(e) {
+            console.log(e)
             this.hideBooks = !this.hideBooks
         }
     }

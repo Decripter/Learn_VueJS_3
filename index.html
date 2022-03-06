@@ -19,7 +19,7 @@
             <p>{{ title }} - {{ author }} - {{ age }}</p>
 
         </div>
-        <button @click="toogleHideBooks">
+        <button @click="toogleHideBooks($event)">
             <span v-if="hideBooks">Hide Books</span>
             <span v-else>Show Books</span>
         </button>
