@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn Vue</title>
     <link rel="stylesheet" href="css/bulma.min.css">
+
+    <script src="fa/fa.js" crossorigin="anonymous"></script>
+
     <style>
         table,
         th,
@@ -14,7 +17,7 @@
         }
 
         tr.fav {
-            background-color: rgb(255, 241, 117);
+            background-color: lightslategray;
             color: rgb(59, 59, 59);
         }
     </style>
@@ -33,29 +36,36 @@
         <br>
 
         <div v-if="hideBooks">
-            <table class="table is-hoverable has-text-centered has-background-light ">
+            <table class="table has-text-centered has-background-grey-light ">
                 <tr>
                     <th>Image</th>
                     <th>Book</th>
                     <th>Author</th>
+                    <th>Favorite</th>
                 </tr>
-                <tr v-for="book in books" :class="{ fav: book.isFav }">
+                <tr v-for="book in books" :class="{ fav: book.isFav }" class="">
                     <td><a :href="book.url"><img :src="book.img" :alt="book.title"></a></td>
-                    <td>{{ book.title }}</td>
-                    <td>{{ book.author }}</td>
+                    <td class="is-vcentered">{{ book.title }}</td>
+                    <td class="is-vcentered">{{ book.author }}</td>
+                    <td @click="toggleFav(book)" class="is-vcentered"><i v-if="book.isFav" class="fas fa-star"
+                            style="color:yellow"></i>
+                        <i v-else class="fas fa-star" style="color:white"></i>
+
+                    </td>
                 </tr>
             </table>
 
 
         </div>
         <br>
-        <button @click="toogleHideBooks($event)">
+        <button @click="toggleHideBooks($event)">
             <span v-if="hideBooks">Hide Books</span>
             <span v-else>Show Books</span>
         </button>
         <hr>
         <a :href="url">Google</a>
     </div>
+
 
     <script src="app.js">
 

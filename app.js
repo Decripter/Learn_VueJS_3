@@ -13,14 +13,20 @@ const app = Vue.createApp({
         }
     },
     methods: {
+
         changeTitle(titleArg) {
             this.title = titleArg
         },
-        toogleHideBooks(e) {
-            console.log(e)
+
+        toggleHideBooks(book) {
             this.hideBooks = !this.hideBooks
+        },
+
+        toggleFav(book) {
+            book.isFav = !book.isFav
         }
-    }
+
+    },
 
 })
 
