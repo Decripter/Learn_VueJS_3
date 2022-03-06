@@ -5,6 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn Vue</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
     <script src="https://unpkg.com/vue@3.0.2"></script>
 </head>
 
@@ -14,20 +21,33 @@
     </h1>
 
     <div id="app">
+
+
+
+        <br>
+
         <div v-if="hideBooks">
-            <ul>
-                <li v-for="book in books">
-                    <h1>{{ book.title }}</h1>
-                    <p>{{ book.author }}</p>
-                </li>
-            </ul>
+            <table>
+                <tr>
+                    <th>Book</th>
+                    <th>Author</th>
+                </tr>
+                <tr v-for="book in books">
+                    <td><a :href="book.url"><img :src="book.img" :alt="book.title"></a></td>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.author }}</td>
+                </tr>
+            </table>
+
 
         </div>
+        <br>
         <button @click="toogleHideBooks($event)">
             <span v-if="hideBooks">Hide Books</span>
             <span v-else>Show Books</span>
         </button>
-        <div v-show="hideBooks">This books are actually view</div>
+        <hr>
+        <a :href="url">Google</a>
     </div>
 
     <script src="app.js">
