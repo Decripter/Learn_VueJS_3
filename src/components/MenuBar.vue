@@ -1,9 +1,13 @@
 <template>
-  <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+  <nav
+    class="navbar has-background-info-dark"
+    role="navigation"
+    aria-label="main navigation"
+  >
     <div class="navbar-brand">
       <a
         role="button"
-        class="navbar-burger"
+        class="navbar-burger has-text-white"
         aria-label="menu"
         aria-expanded="false"
         @click="isOpen = !isOpen"
