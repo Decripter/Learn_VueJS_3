@@ -20,9 +20,13 @@
     </div>
     <div class="navbar-menu" v-bind:class="{ 'is-active': isOpen }">
       <div class="navbar-end">
-        <router-link to="/" class="navbar-item is-tab">Home</router-link>
-        <router-link to="/about" class="navbar-item is-tab">About</router-link>
-        <router-link to="/else" class="navbar-item is-tab"
+        <router-link to="/" class="navbar-item is-tab has-text-white"
+          >Home</router-link
+        >
+        <router-link to="/about" class="navbar-item is-tab has-text-white"
+          >About</router-link
+        >
+        <router-link to="/else" class="navbar-item is-tab has-text-white"
           >Something Else</router-link
         >
       </div>
