@@ -1,0 +1,21 @@
+{
+  "name": "cli_vue_project",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "bulma": "^0.9.3",
+    "core-js": "^3.21.1",
+    "vue": "^3.2.31"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~5.0.1",
+    "@vue/cli-service": "~5.0.1",
+    "@vue/compiler-sfc": "^3.2.31",
+    "node-sass": "^7.0.1",
+    "sass-loader": "^12.6.0"
+  }
+}
