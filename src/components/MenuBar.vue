@@ -32,9 +32,13 @@
       </div>
     </div>
   </nav>
+  <div>
+    <p>{{ text }}, {{ play }}</p>
+  </div>
 </template>
 <script>
 export default {
+  props: ["text", "play"],
   data: function () {
     return {
       isOpen: false,

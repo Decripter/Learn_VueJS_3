@@ -1,5 +1,5 @@
 <template>
-  <MenuBar />
+  <MenuBar text="this text is pass by props" play="another prop " />
 </template>
 
 <script>
