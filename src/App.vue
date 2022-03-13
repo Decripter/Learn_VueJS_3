@@ -6,8 +6,13 @@
     <Modal theme="sales" @close="toggleModal">
       <div>
         <h1>This is my title using slots</h1>
-        <p>This is a paragraph on slots</p>
       </div>
+      <template v-slot:links>
+        <div>
+          <a href="#">Create Account</a>
+          <a href="#">Login</a>
+        </div>
+      </template>
     </Modal>
   </div>
 </template>
@@ -46,5 +51,13 @@ h1 {
   border-bottom: 1px solid #ddd;
   display: inline-block;
   padding-bottom: 10px;
+}
+.modals a {
+  color: #333;
+  padding: 8px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  text-decoration: none;
+  margin: 10px;
 }
 </style>
