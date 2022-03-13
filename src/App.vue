@@ -3,7 +3,12 @@
   <br />
   <button @click="toggleModal">Show Modal</button>
   <div v-if="showModal">
-    <Modal :header="header" :text="text" theme="sales" @close="toggleModal" />
+    <Modal theme="sales" @close="toggleModal">
+      <div>
+        <h1>This is my title using slots</h1>
+        <p>This is a paragraph on slots</p>
+      </div>
+    </Modal>
   </div>
 </template>
 
@@ -16,8 +21,7 @@ export default {
   data() {
     return {
       title: "My First Vue App!",
-      header: "My title is here",
-      text: "This is my text by props",
+
       showModal: false,
     };
   },
