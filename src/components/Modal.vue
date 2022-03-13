@@ -3,6 +3,7 @@
     <div class="modals" :class="{ sale: theme === 'sale' }">
       <slot> Default Content</slot>
       <slot name="links"> </slot>
+      <slot name="about"></slot>
     </div>
   </div>
 </template>
@@ -11,6 +12,9 @@ export default {
   props: ["header", "text", "theme"],
   methods: {
     closeModal() {
+      this.$emit("close");
+    },
+    closeModalTwo() {
       this.$emit("close");
     },
   },
