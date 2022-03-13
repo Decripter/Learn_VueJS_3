@@ -3,6 +3,7 @@
   <br />
   <button @click="toggleModal">Show Modal</button>
   <button @click="toggleModalTwo">Show New Modal</button>
+
   <div v-if="showModal">
     <Modal theme="sales" @close="toggleModal">
       <div>
