@@ -17,10 +17,11 @@
     </Modal>
   </div>
 
-  <div v-else-if="showModalTwo">
+  <teleport to=".newTeleport" v-else-if="showModalTwo">
     <Modal theme="sale" @close="toggleModalTwo">
       <div>
         <h1>This is my Second Modal</h1>
+        <p>This has been teleported outside of div App</p>
       </div>
       <template v-slot:about>
         <div>
@@ -29,7 +30,7 @@
         </div>
       </template>
     </Modal>
-  </div>
+  </teleport>
 </template>
 
 <script>
