@@ -1,16 +1,46 @@
 <template>
-  <MenuBar text="this text is pass by props" play="another prop " />
+  <h1>{{ title }}</h1>
+  <br />
+  <button @click="toggleModal">Show Modal</button>
+  <div v-if="showModal">
+    <Modal :header="header" :text="text" theme="sales" @close="toggleModal" />
+  </div>
 </template>
 
 <script>
-import MenuBar from "./components/MenuBar.vue";
+import Modal from "./components/Modal";
+
 export default {
   name: "App",
-  components: {
-    MenuBar,
+  components: { Modal },
+  data() {
+    return {
+      title: "My First Vue App!",
+      header: "My title is here",
+      text: "This is my text by props",
+      showModal: false,
+    };
+  },
+  methods: {
+    toggleModal() {
+      this.showModal = !this.showModal;
+    },
   },
 };
 </script>
 
 <style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+h1 {
+  border-bottom: 1px solid #ddd;
+  display: inline-block;
+  padding-bottom: 10px;
+}
 </style>
